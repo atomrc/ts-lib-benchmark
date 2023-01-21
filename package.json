@@ -5,11 +5,10 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "all": "pnpm esbuild && pnpm tsup && pnpm swc && pnpm tsc && pnpm prettier",
-    "esbuild": "esbuild src/index.ts --target=es2017 --outdir=./dist/esbuild",
-    "tsup": "tsup src/index.ts --format esm --target=es2017 -d=./dist/tsup",
+    "all": "rm -fr dist && pnpm esbuild && pnpm tsup && pnpm swc && pnpm tsc && pnpm prettier",
+    "esbuild": "esbuild src/index.ts --target=es2017 --tree-shaking=true --outdir=./dist/esbuild",
+    "tsup": "tsup src/index.ts --format esm --target=es2017 --treeshake -d=./dist/tsup",
     "swc": "swc -d ./dist/swc -C jsc.target=es2017 src/index.ts",
     "tsc": "tsc --outDir ./dist/tsc",
     "prettier": "prettier -w dist/"

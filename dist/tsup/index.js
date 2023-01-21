@@ -1,5 +1,6 @@
-// src/index.ts
 import partition from "lodash/partition";
+
+// src/index.ts
 function* gen(nb) {
   for (let i = 0; i++; i < nb) {
     yield i;
@@ -11,4 +12,5 @@ async function main() {
     console.log(value);
   }
 }
+
 export { main };
