@@ -6,6 +6,7 @@ specifiers:
   '@types/lodash': ^4.14.191
   esbuild: ^0.17.0
   lodash: ^4.17.21
+  prettier: ^2.8.3
   swc: ^1.0.11
   tsup: ^6.5.0
   typescript: ^4.9.4
@@ -14,6 +15,7 @@ dependencies:
   '@types/lodash': 4.14.191
   esbuild: 0.17.0
   lodash: 4.17.21
+  prettier: 2.8.3
   swc: 1.0.11
   tsup: 6.5.0_vie36g7wyuxvffmgig7f6jubwe
   typescript: 4.9.4
@@ -1556,6 +1558,12 @@ packages:
   /prepend-http/2.0.0:
     resolution: {integrity: sha512-ravE6m9Atw9Z/jjttRUZ+clIXogdghyZAuWJ3qEzjT+jI/dL1ifAqhZeC5VHzQp1MSt1+jxKkFNemj/iO7tVUA==}
     engines: {node: '>=4'}
+
+  /prettier/2.8.3:
+    resolution: {integrity: sha512-tJ/oJ4amDihPoufT5sM0Z1SKEuKay8LfVAMlbbhnnkvt6BUserZylqo2PN+p9KeljLr0OHa2rXHU1T8reeoTrw==}
+    engines: {node: '>=10.13.0'}
+    hasBin: true
+    dev: false
 
   /process-nextick-args/2.0.1:
     resolution: {integrity: sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==}
