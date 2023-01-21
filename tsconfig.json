@@ -5,7 +5,7 @@
     /* Language and Environment */
     "target": "es2017",                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
     /* Modules */
-    "module": "CommonJS",                                /* Specify what module code is generated. */
+    "module": "ES2020",                                /* Specify what module code is generated. */
 
     /* Emit */
     // "declaration": true,                              /* Generate .d.ts files from TypeScript and JavaScript files in your project. */
