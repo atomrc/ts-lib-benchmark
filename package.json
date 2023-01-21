@@ -4,14 +4,26 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "all": "pnpm esbuild && pnpm tsup && pnpm swc",
+    "esbuild": "esbuild src/index.ts --outdir=./dist/esbuild",
+    "tsup": "tsup src/index.ts --format cjs,esm --minify --splitting -d=./dist/tsup",
+    "swc": "swc -d ./dist/swc src/index.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@types/lodash": "^4.14.191",
+    "esbuild": "^0.17.0",
     "lodash": "^4.17.21",
+    "swc": "^1.0.11",
+    "tsup": "^6.5.0",
     "typescript": "^4.9.4"
+  },
+  "devDependencies": {
+    "@swc/cli": "^0.1.59",
+    "@swc/core": "^1.3.27"
   }
 }
