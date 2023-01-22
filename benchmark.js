@@ -20,7 +20,7 @@ const commands = {
 
 function benchmark(command, onResult) {
   const results = [];
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 30; i++) {
     const timeStart = Date.now();
     execSync(command);
     const totalTime = Date.now() - timeStart;
@@ -30,17 +30,19 @@ function benchmark(command, onResult) {
   return results;
 }
 
-const results = {};
+const rawResults = {};
 for (const [tool, command] of Object.entries(commands)) {
   execSync("rm -fr lib");
   console.warn(`benchmarking ${tool}`);
   const result = benchmark(command, console.warn);
-  results[tool] = result;
+  rawResults[tool] = result;
 }
 
-for (let [tool, sample] of Object.entries(results)) {
+const results = {};
+for (let [tool, sample] of Object.entries(rawResults)) {
   const max = Math.max(...sample);
   const min = Math.min(...sample);
   const mean = sample.reduce((acc, val) => acc + val) / sample.length;
-  console.log(`${tool}: min: ${min}, mean: ${mean}, max: ${max}`);
+  results[tool] = { min, max, mean };
 }
+console.log(results);

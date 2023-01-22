@@ -16,10 +16,19 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+
     - name: Use Node.js
       uses: actions/setup-node@v3
       with:
         node-version: 18
         cache: 'npm'
+
     - run: npm install
-    - run: npm run benchmark
+    - run: |
+        echo "RESULTS<<EOF" >> $GITHUB_ENV
+        node benchmark.js >> $GITHUB_ENV
+        echo "EOF" >> $GITHUB_ENV
+
+    - name: Print Results
+      run: echo $RESULTS
+      
